@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #10231c;
+
+  --color-brand-teal-50: #eefaf6;
+  --color-brand-teal-100: #d3f1e7;
+  --color-brand-teal-500: #147a67;
+  --color-brand-teal-600: #0f6354;
+  --color-brand-teal-700: #0c4f43;
+  --color-brand-teal-900: #08332b;
+
+  --color-brand-lime-100: #eef8d0;
+  --color-brand-lime-300: #d3ec7c;
+  --color-brand-lime-400: #b9dd45;
+  --color-brand-lime-500: #9cc22a;
+  --color-brand-lime-600: #7ea01e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-brand-teal-50: var(--color-brand-teal-50);
+  --color-brand-teal-100: var(--color-brand-teal-100);
+  --color-brand-teal-500: var(--color-brand-teal-500);
+  --color-brand-teal-600: var(--color-brand-teal-600);
+  --color-brand-teal-700: var(--color-brand-teal-700);
+  --color-brand-teal-900: var(--color-brand-teal-900);
+
+  --color-brand-lime-100: var(--color-brand-lime-100);
+  --color-brand-lime-300: var(--color-brand-lime-300);
+  --color-brand-lime-400: var(--color-brand-lime-400);
+  --color-brand-lime-500: var(--color-brand-lime-500);
+  --color-brand-lime-600: var(--color-brand-lime-600);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

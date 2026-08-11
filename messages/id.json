@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "profile": "Profil",
+    "blog": "Berita",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "eyebrow": "Gula Aren, Ditanam Dengan Tujuan",
+    "titleFallback": "Bona Nauli Perkasa",
+    "bodyFallback": "Kami membudidayakan dan memproduksi buah aren serta gula aren berkualitas, berakar dari pertanian Indonesia dan siap menjangkau pasar internasional.",
+    "cta": "Hubungi Kami"
+  },
+  "about": {
+    "titleFallback": "Tentang Kami",
+    "bodyFallback": "Bona Nauli Perkasa adalah perusahaan agrikultur yang berdedikasi pada produksi gula aren berkelanjutan. Dari kebun hingga ekspor, kami menghadirkan nilai dan kualitas di setiap produk kami."
+  },
+  "team": {
+    "titleFallback": "Tim Kami",
+    "bodyFallback": "Orang-orang di balik Bona Nauli Perkasa, bekerja dari kebun hingga ekspor untuk membawa gula aren ke dunia."
+  },
+  "products": {
+    "titleFallback": "Produk Kami",
+    "bodyFallback": "Produk utama kami adalah buah aren segar dan gula aren olahan, dibuat dengan cermat untuk pelanggan lokal maupun global."
+  },
+  "cta": {
+    "titleFallback": "Menjangkau Pasar Internasional",
+    "bodyFallback": "Kami berkomitmen membawa nilai gula aren Indonesia kepada pelanggan di seluruh dunia. Mari bermitra dengan kami.",
+    "button": "Chat di WhatsApp",
+    "findUs": "Temukan Kami di Peta"
+  },
+  "footer": {
+    "rights": "Hak cipta dilindungi."
+  },
+  "profile": {
+    "summary": {
+      "titleFallback": "Profil Perusahaan",
+      "bodyFallback": "Bona Nauli Perkasa adalah perusahaan agrikultur Indonesia yang berfokus pada satu komoditas: pohon aren."
+    },
+    "visi": {
+      "titleFallback": "Visi",
+      "bodyFallback": "Menjadi produsen gula aren Indonesia terkemuka yang diakui secara internasional atas kualitas dan keberlanjutan."
+    },
+    "misi": {
+      "titleFallback": "Misi",
+      "bodyFallback": "Menghadirkan produk gula aren berkualitas tinggi secara konsisten\nMembangun kemitraan jangka panjang dengan petani lokal\nMemperluas akses ke pasar internasional"
+    },
+    "culture": {
+      "titleFallback": "Budaya Perusahaan",
+      "bodyFallback": "Integritas\nKeberlanjutan\nKolaborasi\nPerbaikan berkelanjutan"
+    },
+    "halal": {
+      "titleFallback": "Sertifikat Halal"
+    },
+    "bpom": {
+      "titleFallback": "Sertifikat BPOM"
+    }
+  },
+  "contact": {
+    "callCard": "Hubungi Kami",
+    "mapCard": "Temukan Kami",
+    "formTitle": "Kirim Pesan Kepada Kami",
+    "firstName": "Nama Depan",
+    "lastName": "Nama Belakang",
+    "email": "Email",
+    "message": "Pesan",
+    "submit": "Kirim Pesan",
+    "sentSuccess": "Terima kasih — pesan Anda telah terkirim. Kami akan segera menghubungi Anda kembali.",
+    "errorInvalid": "Mohon lengkapi semua kolom sebelum mengirim.",
+    "errorNotConfigured": "Formulir kontak belum sepenuhnya diatur. Silakan hubungi kami melalui WhatsApp.",
+    "errorSendFailed": "Terjadi kesalahan saat mengirim pesan Anda. Silakan coba lagi atau hubungi kami melalui WhatsApp."
+  },
+  "news": {
+    "pageTitle": "Berita",
+    "empty": "Belum ada artikel yang diterbitkan.",
+    "pageIndicator": "Halaman {page} dari {total}",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "breadcrumb": "Berita"
+  }
+}

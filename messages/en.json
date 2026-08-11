@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "profile": "Profile",
+    "blog": "News",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Palm Sugar, Grown With Purpose",
+    "titleFallback": "Bona Nauli Perkasa",
+    "bodyFallback": "We cultivate and produce premium palm sugar fruit and palm sugar, rooted in Indonesian agriculture and built for international markets.",
+    "cta": "Get in touch"
+  },
+  "about": {
+    "titleFallback": "Who We Are",
+    "bodyFallback": "Bona Nauli Perkasa is an agriculture company dedicated to sustainable palm sugar production. From farm to export, we bring value and quality to every batch we produce."
+  },
+  "team": {
+    "titleFallback": "Our Team",
+    "bodyFallback": "The people behind Bona Nauli Perkasa, working from farm to export to bring palm sugar to the world."
+  },
+  "products": {
+    "titleFallback": "Our Products",
+    "bodyFallback": "Our core products are fresh palm sugar fruit (aren) and processed palm sugar, crafted with care for both local and global customers."
+  },
+  "cta": {
+    "titleFallback": "Reaching International Markets",
+    "bodyFallback": "We are committed to bringing the value of Indonesian palm sugar to customers around the world. Partner with us.",
+    "button": "Chat on WhatsApp",
+    "findUs": "Find Us on Map"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "profile": {
+    "summary": {
+      "titleFallback": "Company Profile",
+      "bodyFallback": "Bona Nauli Perkasa is an Indonesian agriculture company built around one crop: the palm sugar tree."
+    },
+    "visi": {
+      "titleFallback": "Vision",
+      "bodyFallback": "To become a leading Indonesian palm sugar producer recognized internationally for quality and sustainability."
+    },
+    "misi": {
+      "titleFallback": "Mission",
+      "bodyFallback": "Deliver consistently high-quality palm sugar products\nBuild long-term partnerships with local farmers\nExpand access to international markets"
+    },
+    "culture": {
+      "titleFallback": "Corporate Culture",
+      "bodyFallback": "Integrity\nSustainability\nCollaboration\nContinuous improvement"
+    },
+    "halal": {
+      "titleFallback": "Halal Certificate"
+    },
+    "bpom": {
+      "titleFallback": "BPOM Certificate"
+    }
+  },
+  "contact": {
+    "callCard": "Contact Us",
+    "mapCard": "Find Us",
+    "formTitle": "Send Us a Message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message",
+    "sentSuccess": "Thanks — your message has been sent. We'll get back to you soon.",
+    "errorInvalid": "Please fill in all fields before sending.",
+    "errorNotConfigured": "The contact form isn't fully set up yet. Please reach out via WhatsApp instead.",
+    "errorSendFailed": "Something went wrong sending your message. Please try again or reach out via WhatsApp."
+  },
+  "news": {
+    "pageTitle": "News",
+    "empty": "No articles published yet.",
+    "pageIndicator": "Page {page} of {total}",
+    "previous": "Previous",
+    "next": "Next",
+    "breadcrumb": "News"
+  }
+}

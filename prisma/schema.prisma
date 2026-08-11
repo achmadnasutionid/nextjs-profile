@@ -1,0 +1,115 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  passwordHash  String
+  role          Role      @default(ADMIN)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+// A single reusable image reference (stored in Cloudinary, not in Postgres)
+model Media {
+  id           String   @id @default(cuid())
+  publicId     String   // Cloudinary public_id
+  url          String   // Cloudinary secure_url
+  altTextEn    String   @default("")
+  altTextId    String   @default("")
+  createdAt    DateTime @default(now())
+
+  pageSections PageSection[]
+  blogPosts    BlogPost[]
+  products     Product[]
+  teamMembers  TeamMember[]
+}
+
+// One row per editable homepage block (hero, about, products, cta, ...)
+model PageSection {
+  id              String   @id @default(cuid())
+  key             String   @unique // e.g. "hero", "about", "products", "cta"
+  titleEn         String   @default("")
+  titleId         String   @default("")
+  bodyEn          String   @default("")
+  bodyId          String   @default("")
+  mediaId         String?
+  media           Media?   @relation(fields: [mediaId], references: [id])
+  // Only used on the "cta" section, to power the WhatsApp / Google Maps buttons
+  // and the contact form's recipient address
+  whatsappNumber  String?
+  googleMapsUrl   String?
+  contactEmail    String?
+  // Only used on the "profileSummary" section, for the COMPRO PDF download button
+  fileUrl         String?
+  fileName        String?
+  filePublicId    String?
+  updatedAt       DateTime @updatedAt
+}
+
+// A single product card on the homepage's Products section
+model Product {
+  id        String   @id @default(cuid())
+  nameEn    String
+  nameId    String
+  detailEn  String   @default("")
+  detailId  String   @default("")
+  mediaId   String?
+  media     Media?   @relation(fields: [mediaId], references: [id])
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// A single team member card on the homepage's Our Team section
+model TeamMember {
+  id        String   @id @default(cuid())
+  nameEn    String
+  nameId    String
+  detailEn  String   @default("")
+  detailId  String   @default("")
+  mediaId   String?
+  media     Media?   @relation(fields: [mediaId], references: [id])
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id            String     @id @default(cuid())
+  slug          String     @unique
+  titleEn       String
+  titleId       String
+  excerptEn     String     @default("")
+  excerptId     String     @default("")
+  bodyEn        String
+  bodyId        String
+  coverMediaId  String?
+  coverMedia    Media?     @relation(fields: [coverMediaId], references: [id])
+  authorName    String     @default("Bona Nauli Perkasa")
+  status        PostStatus @default(DRAFT)
+  publishedAt   DateTime?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
