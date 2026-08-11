@@ -1,7 +1,11 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+let resend: Resend | undefined;
+
+function getResend() {
+  if (!resend) resend = new Resend(process.env.RESEND_API_KEY);
+  return resend;
+}
 
 export async function sendContactEmail({
   to,
@@ -16,7 +20,9 @@ export async function sendContactEmail({
   fromAddress: string;
   message: string;
 }) {
-  const { error } = await resend.emails.send({
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+
+  const { error } = await getResend().emails.send({
     from: `Bona Nauli Perkasa Website <${fromEmail}>`,
     to,
     replyTo: fromAddress,
