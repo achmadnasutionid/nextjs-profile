@@ -3,6 +3,8 @@ import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/site";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 const PATHS = [
   { path: "", priority: { default: 1, other: 0.9 } },
   { path: "/profile", priority: { default: 0.8, other: 0.7 } },
