@@ -111,6 +111,28 @@ export default async function AdminDashboard({
         </p>
       )}
 
+      <div className="mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-brand-teal-600">
+          Site
+        </h2>
+        <div className="mt-3 rounded-2xl border border-zinc-200 bg-white">
+          <div className="flex items-center justify-between px-6 py-4">
+            <div>
+              <p className="font-medium text-brand-teal-900">Settings</p>
+              <p className="text-sm text-zinc-500">
+                Header &amp; footer logo
+              </p>
+            </div>
+            <Link
+              href="/admin/settings"
+              className="text-sm font-semibold text-brand-teal-600 hover:text-brand-teal-800"
+            >
+              Edit →
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <SectionList title="Homepage" sections={homeSections} />
 
       <div className="mt-3 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white">

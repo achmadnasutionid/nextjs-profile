@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
 // Placeholder brand mark — swap the <svg> below for the client's real logo file
@@ -29,16 +30,28 @@ export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
 export function Logo({
   href = "/",
   className,
+  logoUrl,
 }: {
   href?: string;
   className?: string;
+  logoUrl?: string | null;
 }) {
   return (
     <Link
       href={href}
       className={`flex items-center gap-2.5 ${className ?? ""}`}
     >
-      <LogoMark />
+      {logoUrl ? (
+        <Image
+          src={logoUrl}
+          alt="Bona Nauli Perkasa logo"
+          width={36}
+          height={36}
+          className="h-9 w-9 rounded-full object-cover"
+        />
+      ) : (
+        <LogoMark />
+      )}
       <span className="text-lg font-semibold tracking-tight text-brand-teal-900">
         Bona Nauli Perkasa
       </span>

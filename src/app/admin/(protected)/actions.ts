@@ -89,6 +89,49 @@ export async function updateSection(key: string, formData: FormData) {
   redirect(`/admin?saved=${key}`);
 }
 
+export async function updateSiteConfig(formData: FormData) {
+  const session = await auth();
+  if (!session) redirect("/admin/login");
+
+  const altTextEn = String(formData.get("altTextEn") ?? "");
+  const altTextId = String(formData.get("altTextId") ?? "");
+  const file = formData.get("image");
+
+  let logoId: string | undefined;
+
+  if (file instanceof File && file.size > 0) {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const uploaded = await uploadImage(buffer, "bona-nauli-perkasa");
+    const media = await prisma.media.create({
+      data: {
+        publicId: uploaded.publicId,
+        url: uploaded.url,
+        altTextEn,
+        altTextId,
+      },
+    });
+    logoId = media.id;
+  }
+
+  const existing = await prisma.siteConfig.findUnique({ where: { id: 1 } });
+  if (!logoId && existing?.logoId) {
+    await prisma.media.update({
+      where: { id: existing.logoId },
+      data: { altTextEn, altTextId },
+    });
+  }
+
+  await prisma.siteConfig.upsert({
+    where: { id: 1 },
+    update: { ...(logoId ? { logoId } : {}) },
+    create: { id: 1, ...(logoId ? { logoId } : {}) },
+  });
+
+  revalidatePath("/en");
+  revalidatePath("/id");
+  redirect("/admin/settings?saved=1");
+}
+
 // Shared CRUD for the "card" content types (Product, TeamMember) — same
 // shape (name/detail/image/order) in both Prisma models.
 type CardRecord = { id: string; mediaId: string | null; order: number };

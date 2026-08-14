@@ -39,6 +39,15 @@ model Media {
   blogPosts    BlogPost[]
   products     Product[]
   teamMembers  TeamMember[]
+  siteConfigs  SiteConfig[]
+}
+
+// A single global row for site-wide settings (currently just the header/footer logo)
+model SiteConfig {
+  id        Int      @id @default(1)
+  logoId    String?
+  logo      Media?   @relation(fields: [logoId], references: [id])
+  updatedAt DateTime @updatedAt
 }
 
 // One row per editable homepage block (hero, about, products, cta, ...)

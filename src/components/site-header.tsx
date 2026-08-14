@@ -14,7 +14,7 @@ const links = [
   { href: "/contact", key: "contact" },
 ] as const;
 
-export function SiteHeader() {
+export function SiteHeader({ logoUrl }: { logoUrl?: string | null }) {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -26,7 +26,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-brand-teal-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Logo />
+        <Logo logoUrl={logoUrl} />
         <nav className="hidden items-center gap-8 text-sm font-medium text-brand-teal-700 sm:flex">
           {links.map(({ href, key }) => (
             <Link key={href} href={href} className="hover:text-brand-teal-900">

@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { siteUrl, siteName } from "@/lib/site";
+import { prisma } from "@/lib/prisma";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
@@ -72,6 +73,12 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
+  const siteConfig = await prisma.siteConfig.findUnique({
+    where: { id: 1 },
+    include: { logo: true },
+  });
+  const logoUrl = siteConfig?.logo?.url;
+
   return (
     <html
       lang={locale}
@@ -79,9 +86,9 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
-          <SiteHeader />
+          <SiteHeader logoUrl={logoUrl} />
           <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <SiteFooter logoUrl={logoUrl} />
         </NextIntlClientProvider>
       </body>
     </html>
