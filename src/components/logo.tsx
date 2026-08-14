@@ -31,11 +31,19 @@ export function Logo({
   href = "/",
   className,
   logoUrl,
+  tone = "light",
 }: {
   href?: string;
   className?: string;
   logoUrl?: string | null;
+  // "light" = sitting on a light background (header); "dark" = on the dark
+  // teal footer. Each word keeps its teal/lime family but uses a shade
+  // tuned for contrast against that background.
+  tone?: "light" | "dark";
 }) {
+  const tealClass = tone === "dark" ? "text-brand-teal-100" : "text-brand-teal-600";
+  const limeClass = tone === "dark" ? "text-brand-lime-400" : "text-brand-lime-600";
+
   return (
     <Link
       href={href}
@@ -52,8 +60,10 @@ export function Logo({
       ) : (
         <LogoMark />
       )}
-      <span className="text-lg font-semibold tracking-tight text-brand-teal-900">
-        Bona Nauli Perkasa
+      <span className="text-lg font-semibold tracking-tight">
+        <span className={tealClass}>BONA</span>{" "}
+        <span className={limeClass}>NAULI</span>{" "}
+        <span className={tealClass}>PERKASA</span>
       </span>
     </Link>
   );
