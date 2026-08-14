@@ -75,9 +75,10 @@ export default async function LocaleLayout({
 
   const siteConfig = await prisma.siteConfig.findUnique({
     where: { id: 1 },
-    include: { logo: true },
+    include: { headerLogo: true, footerLogo: true },
   });
-  const logoUrl = siteConfig?.logo?.url;
+  const headerLogoUrl = siteConfig?.headerLogo?.url;
+  const footerLogoUrl = siteConfig?.footerLogo?.url;
 
   return (
     <html
@@ -86,9 +87,9 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
-          <SiteHeader logoUrl={logoUrl} />
+          <SiteHeader logoUrl={headerLogoUrl} />
           <main className="flex-1">{children}</main>
-          <SiteFooter logoUrl={logoUrl} />
+          <SiteFooter logoUrl={footerLogoUrl} />
         </NextIntlClientProvider>
       </body>
     </html>

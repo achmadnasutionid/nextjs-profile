@@ -11,7 +11,7 @@ export default async function SettingsPage({
   const { saved } = await searchParams;
   const siteConfig = await prisma.siteConfig.findUnique({
     where: { id: 1 },
-    include: { logo: true },
+    include: { headerLogo: true, footerLogo: true },
   });
 
   return (
@@ -32,22 +32,28 @@ export default async function SettingsPage({
       <form action={updateSiteConfig} className="mt-6 space-y-6">
         <div className="rounded-xl border border-dashed border-zinc-300 p-4">
           <p className="text-sm font-semibold text-brand-teal-900">
-            Header &amp; footer logo
+            Header logo
           </p>
-          {siteConfig?.logo && (
-            <Image
-              src={siteConfig.logo.url}
-              alt=""
-              width={72}
-              height={72}
-              className="mt-3 mb-3 h-16 w-16 rounded-full object-cover"
-            />
+          <p className="mt-1 text-xs text-zinc-500">
+            Shown on a white background — use a dark or colored version of
+            the logo so it stays visible.
+          </p>
+          {siteConfig?.headerLogo && (
+            <div className="mt-3 mb-3 inline-block rounded-lg bg-white p-3">
+              <Image
+                src={siteConfig.headerLogo.url}
+                alt=""
+                width={160}
+                height={48}
+                className="h-10 w-auto object-contain"
+              />
+            </div>
           )}
           <label className="block text-sm font-medium text-zinc-700">
-            {siteConfig?.logo ? "Replace logo" : "Upload logo"}
+            {siteConfig?.headerLogo ? "Replace header logo" : "Upload header logo"}
             <input
               type="file"
-              name="image"
+              name="headerImage"
               accept="image/*"
               className="mt-1 block text-sm"
             />
@@ -56,16 +62,64 @@ export default async function SettingsPage({
             <label className="block text-sm font-medium text-zinc-700">
               Alt text (English)
               <input
-                name="altTextEn"
-                defaultValue={siteConfig?.logo?.altTextEn}
+                name="headerAltTextEn"
+                defaultValue={siteConfig?.headerLogo?.altTextEn}
                 className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm focus:border-brand-teal-500 focus:outline-none"
               />
             </label>
             <label className="block text-sm font-medium text-zinc-700">
               Alt text (Indonesian)
               <input
-                name="altTextId"
-                defaultValue={siteConfig?.logo?.altTextId}
+                name="headerAltTextId"
+                defaultValue={siteConfig?.headerLogo?.altTextId}
+                className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm focus:border-brand-teal-500 focus:outline-none"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-dashed border-zinc-300 p-4">
+          <p className="text-sm font-semibold text-brand-teal-900">
+            Footer logo
+          </p>
+          <p className="mt-1 text-xs text-zinc-500">
+            Shown on the dark teal footer — use a white or light version of
+            the logo so it stays visible.
+          </p>
+          {siteConfig?.footerLogo && (
+            <div className="mt-3 mb-3 inline-block rounded-lg bg-brand-teal-900 p-3">
+              <Image
+                src={siteConfig.footerLogo.url}
+                alt=""
+                width={160}
+                height={48}
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+          )}
+          <label className="block text-sm font-medium text-zinc-700">
+            {siteConfig?.footerLogo ? "Replace footer logo" : "Upload footer logo"}
+            <input
+              type="file"
+              name="footerImage"
+              accept="image/*"
+              className="mt-1 block text-sm"
+            />
+          </label>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            <label className="block text-sm font-medium text-zinc-700">
+              Alt text (English)
+              <input
+                name="footerAltTextEn"
+                defaultValue={siteConfig?.footerLogo?.altTextEn}
+                className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm focus:border-brand-teal-500 focus:outline-none"
+              />
+            </label>
+            <label className="block text-sm font-medium text-zinc-700">
+              Alt text (Indonesian)
+              <input
+                name="footerAltTextId"
+                defaultValue={siteConfig?.footerLogo?.altTextId}
                 className="mt-1 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm focus:border-brand-teal-500 focus:outline-none"
               />
             </label>

@@ -45,9 +45,9 @@ export function Logo({
         <Image
           src={logoUrl}
           alt="Bona Nauli Perkasa logo"
-          width={36}
-          height={36}
-          className="h-9 w-9 rounded-full object-cover"
+          width={160}
+          height={40}
+          className="h-9 w-auto object-contain"
         />
       ) : (
         <LogoMark />

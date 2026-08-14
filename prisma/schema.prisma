@@ -35,19 +35,24 @@ model Media {
   altTextId    String   @default("")
   createdAt    DateTime @default(now())
 
-  pageSections PageSection[]
-  blogPosts    BlogPost[]
-  products     Product[]
-  teamMembers  TeamMember[]
-  siteConfigs  SiteConfig[]
+  pageSections          PageSection[]
+  blogPosts             BlogPost[]
+  products              Product[]
+  teamMembers           TeamMember[]
+  siteConfigHeaderLogos SiteConfig[] @relation("SiteConfigHeaderLogo")
+  siteConfigFooterLogos SiteConfig[] @relation("SiteConfigFooterLogo")
 }
 
-// A single global row for site-wide settings (currently just the header/footer logo)
+// A single global row for site-wide settings. The header (white background)
+// and footer (dark teal background) need differently-colored logo files, so
+// each gets its own optional Media.
 model SiteConfig {
-  id        Int      @id @default(1)
-  logoId    String?
-  logo      Media?   @relation(fields: [logoId], references: [id])
-  updatedAt DateTime @updatedAt
+  id           Int      @id @default(1)
+  headerLogoId String?
+  headerLogo   Media?   @relation("SiteConfigHeaderLogo", fields: [headerLogoId], references: [id])
+  footerLogoId String?
+  footerLogo   Media?   @relation("SiteConfigFooterLogo", fields: [footerLogoId], references: [id])
+  updatedAt    DateTime @updatedAt
 }
 
 // One row per editable homepage block (hero, about, products, cta, ...)

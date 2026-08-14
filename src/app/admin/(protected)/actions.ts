@@ -89,15 +89,19 @@ export async function updateSection(key: string, formData: FormData) {
   redirect(`/admin?saved=${key}`);
 }
 
-export async function updateSiteConfig(formData: FormData) {
-  const session = await auth();
-  if (!session) redirect("/admin/login");
-
-  const altTextEn = String(formData.get("altTextEn") ?? "");
-  const altTextId = String(formData.get("altTextId") ?? "");
-  const file = formData.get("image");
-
-  let logoId: string | undefined;
+// Uploads the file behind `fieldName` (if present) into a new Media row, and
+// otherwise updates alt text on the existing one for that slot. Returns the
+// mediaId to write onto SiteConfig, or undefined to leave it unchanged.
+async function uploadLogoSlot(
+  formData: FormData,
+  fieldName: string,
+  altTextEnField: string,
+  altTextIdField: string,
+  existingMediaId: string | null | undefined,
+) {
+  const altTextEn = String(formData.get(altTextEnField) ?? "");
+  const altTextId = String(formData.get(altTextIdField) ?? "");
+  const file = formData.get(fieldName);
 
   if (file instanceof File && file.size > 0) {
     const buffer = Buffer.from(await file.arrayBuffer());
@@ -110,21 +114,50 @@ export async function updateSiteConfig(formData: FormData) {
         altTextId,
       },
     });
-    logoId = media.id;
+    return media.id;
   }
 
-  const existing = await prisma.siteConfig.findUnique({ where: { id: 1 } });
-  if (!logoId && existing?.logoId) {
+  if (existingMediaId) {
     await prisma.media.update({
-      where: { id: existing.logoId },
+      where: { id: existingMediaId },
       data: { altTextEn, altTextId },
     });
   }
+  return undefined;
+}
+
+export async function updateSiteConfig(formData: FormData) {
+  const session = await auth();
+  if (!session) redirect("/admin/login");
+
+  const existing = await prisma.siteConfig.findUnique({ where: { id: 1 } });
+
+  const headerLogoId = await uploadLogoSlot(
+    formData,
+    "headerImage",
+    "headerAltTextEn",
+    "headerAltTextId",
+    existing?.headerLogoId,
+  );
+  const footerLogoId = await uploadLogoSlot(
+    formData,
+    "footerImage",
+    "footerAltTextEn",
+    "footerAltTextId",
+    existing?.footerLogoId,
+  );
 
   await prisma.siteConfig.upsert({
     where: { id: 1 },
-    update: { ...(logoId ? { logoId } : {}) },
-    create: { id: 1, ...(logoId ? { logoId } : {}) },
+    update: {
+      ...(headerLogoId ? { headerLogoId } : {}),
+      ...(footerLogoId ? { footerLogoId } : {}),
+    },
+    create: {
+      id: 1,
+      ...(headerLogoId ? { headerLogoId } : {}),
+      ...(footerLogoId ? { footerLogoId } : {}),
+    },
   });
 
   revalidatePath("/en");
