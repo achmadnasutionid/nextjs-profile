@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getSections, toListItems } from "@/lib/content";
 import { ImageSlot } from "@/components/image-slot";
-import { LogoMark } from "@/components/logo";
 
 export async function generateMetadata({
   params,
@@ -63,7 +62,12 @@ export default async function ProfilePage({
       {/* Logo + Summary */}
       <section className="px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <LogoMark className="mx-auto h-16 w-16" />
+          <ImageSlot
+            imageUrl={summary.imageUrl}
+            imageAlt={summary.imageAlt}
+            className="mx-auto h-16 w-16"
+            rounded="full"
+          />
           <h1 className="mt-8 text-3xl font-bold tracking-tight text-brand-teal-900 sm:text-4xl">
             {summary.title}
           </h1>
