@@ -32,7 +32,8 @@ export async function submitContactForm(locale: string, formData: FormData) {
       fromAddress: email,
       message,
     });
-  } catch {
+  } catch (error) {
+    console.error("Failed to send contact email:", error);
     redirect(`/${locale}/contact?error=send-failed`);
   }
 
