@@ -7,26 +7,26 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "Palm Sugar, Grown With Purpose",
+    "eyebrow": "Palm Fruit, Grown With Purpose",
     "titleFallback": "Bona Nauli Perkasa",
-    "bodyFallback": "We cultivate and produce premium palm sugar fruit and palm sugar, rooted in Indonesian agriculture and built for international markets.",
+    "bodyFallback": "We cultivate and produce premium palm fruit, rooted in Indonesian agriculture and built for international markets.",
     "cta": "Get in touch"
   },
   "about": {
     "titleFallback": "Who We Are",
-    "bodyFallback": "Bona Nauli Perkasa is an agriculture company dedicated to sustainable palm sugar production. From farm to export, we bring value and quality to every batch we produce."
+    "bodyFallback": "Bona Nauli Perkasa is an agriculture company dedicated to sustainable palm fruit production. From farm to export, we bring value and quality to every batch we produce."
   },
   "team": {
     "titleFallback": "Our Team",
-    "bodyFallback": "The people behind Bona Nauli Perkasa, working from farm to export to bring palm sugar to the world."
+    "bodyFallback": "The people behind Bona Nauli Perkasa, working from farm to export to bring palm fruit to the world."
   },
   "products": {
     "titleFallback": "Our Products",
-    "bodyFallback": "Our core products are fresh palm sugar fruit (aren) and processed palm sugar, crafted with care for both local and global customers."
+    "bodyFallback": "Our core products are fresh palm fruit (aren), crafted with care for both local and global customers."
   },
   "cta": {
     "titleFallback": "Reaching International Markets",
-    "bodyFallback": "We are committed to bringing the value of Indonesian palm sugar to customers around the world. Partner with us.",
+    "bodyFallback": "We are committed to bringing the value of Indonesian palm fruit to customers around the world. Partner with us.",
     "button": "Chat on WhatsApp",
     "findUs": "Find Us on Map"
   },
@@ -36,15 +36,15 @@
   "profile": {
     "summary": {
       "titleFallback": "Company Profile",
-      "bodyFallback": "Bona Nauli Perkasa is an Indonesian agriculture company built around one crop: the palm sugar tree."
+      "bodyFallback": "Bona Nauli Perkasa is an Indonesian agriculture company built around one crop: the palm fruit tree."
     },
     "visi": {
       "titleFallback": "Vision",
-      "bodyFallback": "To become a leading Indonesian palm sugar producer recognized internationally for quality and sustainability."
+      "bodyFallback": "To become a leading Indonesian palm fruit producer recognized internationally for quality and sustainability."
     },
     "misi": {
       "titleFallback": "Mission",
-      "bodyFallback": "Deliver consistently high-quality palm sugar products\nBuild long-term partnerships with local farmers\nExpand access to international markets"
+      "bodyFallback": "Deliver consistently high-quality palm fruit products\nBuild long-term partnerships with local farmers\nExpand access to international markets"
     },
     "culture": {
       "titleFallback": "Corporate Culture",

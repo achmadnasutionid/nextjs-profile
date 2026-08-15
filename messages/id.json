@@ -7,26 +7,26 @@
     "menu": "Menu"
   },
   "hero": {
-    "eyebrow": "Gula Aren, Ditanam Dengan Tujuan",
+    "eyebrow": "Buah Aren, Ditanam Dengan Tujuan",
     "titleFallback": "Bona Nauli Perkasa",
-    "bodyFallback": "Kami membudidayakan dan memproduksi buah aren serta gula aren berkualitas, berakar dari pertanian Indonesia dan siap menjangkau pasar internasional.",
+    "bodyFallback": "Kami membudidayakan dan memproduksi buah aren berkualitas, berakar dari pertanian Indonesia dan siap menjangkau pasar internasional.",
     "cta": "Hubungi Kami"
   },
   "about": {
     "titleFallback": "Tentang Kami",
-    "bodyFallback": "Bona Nauli Perkasa adalah perusahaan agrikultur yang berdedikasi pada produksi gula aren berkelanjutan. Dari kebun hingga ekspor, kami menghadirkan nilai dan kualitas di setiap produk kami."
+    "bodyFallback": "Bona Nauli Perkasa adalah perusahaan agrikultur yang berdedikasi pada produksi buah aren berkelanjutan. Dari kebun hingga ekspor, kami menghadirkan nilai dan kualitas di setiap produk kami."
   },
   "team": {
     "titleFallback": "Tim Kami",
-    "bodyFallback": "Orang-orang di balik Bona Nauli Perkasa, bekerja dari kebun hingga ekspor untuk membawa gula aren ke dunia."
+    "bodyFallback": "Orang-orang di balik Bona Nauli Perkasa, bekerja dari kebun hingga ekspor untuk membawa buah aren ke dunia."
   },
   "products": {
     "titleFallback": "Produk Kami",
-    "bodyFallback": "Produk utama kami adalah buah aren segar dan gula aren olahan, dibuat dengan cermat untuk pelanggan lokal maupun global."
+    "bodyFallback": "Produk utama kami adalah buah aren segar, dibuat dengan cermat untuk pelanggan lokal maupun global."
   },
   "cta": {
     "titleFallback": "Menjangkau Pasar Internasional",
-    "bodyFallback": "Kami berkomitmen membawa nilai gula aren Indonesia kepada pelanggan di seluruh dunia. Mari bermitra dengan kami.",
+    "bodyFallback": "Kami berkomitmen membawa nilai buah aren Indonesia kepada pelanggan di seluruh dunia. Mari bermitra dengan kami.",
     "button": "Chat di WhatsApp",
     "findUs": "Temukan Kami di Peta"
   },
@@ -40,11 +40,11 @@
     },
     "visi": {
       "titleFallback": "Visi",
-      "bodyFallback": "Menjadi produsen gula aren Indonesia terkemuka yang diakui secara internasional atas kualitas dan keberlanjutan."
+      "bodyFallback": "Menjadi produsen buah aren Indonesia terkemuka yang diakui secara internasional atas kualitas dan keberlanjutan."
     },
     "misi": {
       "titleFallback": "Misi",
-      "bodyFallback": "Menghadirkan produk gula aren berkualitas tinggi secara konsisten\nMembangun kemitraan jangka panjang dengan petani lokal\nMemperluas akses ke pasar internasional"
+      "bodyFallback": "Menghadirkan produk buah aren berkualitas tinggi secara konsisten\nMembangun kemitraan jangka panjang dengan petani lokal\nMemperluas akses ke pasar internasional"
     },
     "culture": {
       "titleFallback": "Budaya Perusahaan",
