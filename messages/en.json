@@ -60,6 +60,8 @@
   "contact": {
     "callCard": "Contact Us",
     "mapCard": "Find Us",
+    "instagramCard": "Instagram",
+    "facebookCard": "Facebook",
     "formTitle": "Send Us a Message",
     "firstName": "First Name",
     "lastName": "Last Name",

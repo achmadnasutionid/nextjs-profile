@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getSections } from "@/lib/content";
-import { PhoneIcon, MapPinIcon } from "@/components/contact-icons";
+import {
+  PhoneIcon,
+  MapPinIcon,
+  InstagramIcon,
+  FacebookIcon,
+} from "@/components/contact-icons";
 import { submitContactForm } from "./actions";
+
+const INSTAGRAM_URL = "https://www.instagram.com/pardede_bnp/";
+const FACEBOOK_URL = "https://www.facebook.com/ud.pardede.bnp";
 
 function whatsappHref(number: string) {
   const digits = number.replace(/[^\d]/g, "");
@@ -49,7 +57,7 @@ export default async function ContactPage({
     <>
       {/* Icon cards */}
       <section className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
-        <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {cta?.whatsappNumber && (
             <a
               href={whatsappHref(cta.whatsappNumber)}
@@ -80,6 +88,32 @@ export default async function ContactPage({
               </p>
             </a>
           )}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center"
+          >
+            <div className="flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-brand-teal-600 to-brand-teal-900 transition-transform group-hover:scale-105">
+              <InstagramIcon className="h-16 w-16 text-brand-lime-400" />
+            </div>
+            <p className="mt-5 text-lg font-semibold text-brand-teal-900">
+              {t("instagramCard")}
+            </p>
+          </a>
+          <a
+            href={FACEBOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center"
+          >
+            <div className="flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-brand-teal-600 to-brand-teal-900 transition-transform group-hover:scale-105">
+              <FacebookIcon className="h-16 w-16 text-brand-lime-400" />
+            </div>
+            <p className="mt-5 text-lg font-semibold text-brand-teal-900">
+              {t("facebookCard")}
+            </p>
+          </a>
         </div>
       </section>
 

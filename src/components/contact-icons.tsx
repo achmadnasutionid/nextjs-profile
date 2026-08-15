@@ -40,3 +40,56 @@ export function MapPinIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      className={className}
+      aria-hidden="true"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="3.75" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" d="M16.75 7.25h.008v.008h-.008V7.25Z" />
+    </svg>
+  );
+}
+
+export function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      className={className}
+      aria-hidden="true"
+    >
+      <rect
+        x="3"
+        y="3"
+        width="18"
+        height="18"
+        rx="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M14.25 8.25h-1.5a1.875 1.875 0 0 0-1.875 1.875V12m3.375 0h-3.375m0 0V18M12.875 12H11"
+      />
+    </svg>
+  );
+}

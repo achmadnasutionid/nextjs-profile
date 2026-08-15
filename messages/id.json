@@ -60,6 +60,8 @@
   "contact": {
     "callCard": "Hubungi Kami",
     "mapCard": "Temukan Kami",
+    "instagramCard": "Instagram",
+    "facebookCard": "Facebook",
     "formTitle": "Kirim Pesan Kepada Kami",
     "firstName": "Nama Depan",
     "lastName": "Nama Belakang",
