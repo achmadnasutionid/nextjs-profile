@@ -65,8 +65,9 @@ export default async function ProfilePage({
           <ImageSlot
             imageUrl={summary.imageUrl}
             imageAlt={summary.imageAlt}
-            className="mx-auto h-16 w-16"
-            rounded="full"
+            className="mx-auto h-40 w-full max-w-sm sm:h-52"
+            rounded="none"
+            fit="contain"
           />
           <h1 className="mt-8 text-3xl font-bold tracking-tight text-brand-teal-900 sm:text-4xl">
             {summary.title}

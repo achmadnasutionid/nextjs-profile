@@ -6,11 +6,13 @@ export function ImageSlot({
   imageAlt,
   className,
   rounded = "xl",
+  fit = "cover",
 }: {
   imageUrl?: string;
   imageAlt?: string;
   className: string;
   rounded?: "none" | "xl" | "full";
+  fit?: "cover" | "contain";
 }) {
   const roundedClass =
     rounded === "full" ? "rounded-full" : rounded === "xl" ? "rounded-3xl" : "";
@@ -21,7 +23,7 @@ export function ImageSlot({
           src={imageUrl}
           alt={imageAlt ?? ""}
           fill
-          className="object-cover"
+          className={fit === "contain" ? "object-contain" : "object-cover"}
         />
       </div>
     );
